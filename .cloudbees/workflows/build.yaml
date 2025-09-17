@@ -19,7 +19,7 @@ jobs:
           /kaniko/executor --context $CLOUDBEES_WORKSPACE --build-arg USER=cbp-qa-automation,TOKEN=${{ secrets.GH_SECURITY_PAT }} --dockerfile $CLOUDBEES_WORKSPACE/Dockerfile --tar-path $CLOUDBEES_WORKSPACE/container-image.tar --no-push
       - id: register-artifact
         name: Register the artifact
-        uses: cbp-qa-automation/reusableworkflows/MyAppBuild.yaml
+        uses: cbp-qa-automation/reusableworkflows/.cloudbees/workflows/NewAppBuild.yaml
         with:
           artifactName: hackers
           baseVersion: QE0.1
