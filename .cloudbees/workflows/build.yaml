@@ -1,0 +1,14 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: build
+on:
+  push:
+    branches:
+      - "**"
+jobs:
+  build:
+    uses: aspm-app-dashboard/reusableworkflows/MyAppBuild.yaml
+    with:
+      artifactName: hackers
+      baseVersion: qev0.1
+      digest: sha256:fe315aaa123abcdef===
