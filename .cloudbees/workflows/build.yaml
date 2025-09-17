@@ -24,11 +24,6 @@ jobs:
           artifactName: hackers
           baseVersion: QE0.1
           digest: sha256:fe315aaagc92384h98cdef===
-      - name: Print output parameter artifact ID
-        uses: docker://alpine:latest
-        shell: sh
-        run: |
-          echo "artifact ID for new-vulnerablegorepo4gh:${{ cloudbees.version }} is: ${{ steps.register-artifact.outputs.artifact-id }}"
       - id: upload-binary
         name: Upload binary using action
         uses: cloudbees-io/asset-chain-utils-preprod/upload-binary@v1
