@@ -16,11 +16,11 @@ inputs:
 
 runs:
   using: composite
-    steps:
-      - uses: cloudbees-io/register-build-artifact@v1
-        name: Publish artifact
-        with:
-          name: "${{ inputs.artifactName }}"
-          version: "${{inputs.baseVersion}}-${{cloudbees.version}}"
-          url: "docker.io/MyApp/${{ inputs.artifactName }}:${{inputs.baseVersion}}-${{cloudbees.version}}"
-          digest: "${{ inputs.digest }}"          
+  steps:
+  - uses: cloudbees-io/register-build-artifact@v1
+    name: Publish artifact
+    with:
+        name: "${{ inputs.artifactName }}"
+        version: "${{inputs.baseVersion}}-${{cloudbees.version}}"
+        url: "docker.io/MyApp/${{ inputs.artifactName }}:${{inputs.baseVersion}}-${{cloudbees.version}}"
+        digest: "${{ inputs.digest }}"
