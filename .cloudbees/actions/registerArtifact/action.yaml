@@ -10,6 +10,8 @@ inputs:
     required: true
   digest:
     required: false
+  url:
+    required: false  
 
 runs:
   using: composite
@@ -19,5 +21,5 @@ runs:
     with:
         name: "${{ inputs.artifactName }}"
         version: "${{inputs.baseVersion}}-${{cloudbees.version}}"
-        url: "docker.io/MyApp/${{ inputs.artifactName }}:${{inputs.baseVersion}}-${{cloudbees.version}}"
         digest: "${{ inputs.digest }}"
+        url: "${{ inputs.url }}"
