@@ -24,6 +24,7 @@ jobs:
           artifactName: hackers
           baseVersion: QE0.1
           digest: sha256:fe315aaagc92384h98cdef===
+          url: 020229604682.dkr.ecr.us-east-1.amazonaws.com/throwaway/actions/vulnerable-image:hac-0.1
       - id: upload-binary
         name: Upload binary using action
         uses: cloudbees-io/asset-chain-utils-preprod/upload-binary@v1
